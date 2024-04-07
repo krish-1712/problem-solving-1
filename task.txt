@@ -1,0 +1,97 @@
+1) Explain the concept of prime numbers and write a function to check if a given number is prime.
+
+let num=userInput[0];
+console.log(num);
+function isprime(num){
+ if(num<=1){
+     return false
+ }
+ 
+ for(let i=2;i<=num/2;i++){
+     if(num%i==0){
+         return false
+     }
+ }
+ return true
+}
+console.log(`Is ${num} prime? ${isprime(num)}`);
+
+
+
+2) Write a function to find the largest element in an array.
+
+let num = userInput[0].split('').map(Number); 
+console.log(num);
+
+function findLargestElement(arr) {
+    if (arr.length === 0) {
+        return null;
+    }
+    let largest = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+        }
+    }
+    return largest;
+}
+
+console.log(`The largest element in the array is: ${findLargestElement(num)}`);
+
+3) Write a function to find the second largest element in an array.
+
+let num = userInput[0].split(' ').map(Number); 
+console.log(num);
+
+function findSecondLargest(arr) {
+    arr.sort((a, b) => b - a);
+    return arr[1];
+}
+
+console.log(`Second largest element: ${findSecondLargest(num)}`);
+
+
+4)  Write a function to find the nth Fibonacci number using iteration
+
+let num = userInput[0].split(' ').map(Number); 
+console.log(num);
+
+function findNthFibonacci(n) {
+    if (n <= 1) {
+        return n;
+    }
+
+    let fibPrev = 0;
+    let fibCurr = 1;
+    let fibNext;
+
+    for (let i = 2; i <= n; i++) {
+        fibNext = fibPrev + fibCurr;
+        fibPrev = fibCurr;
+        fibCurr = fibNext;
+    }
+
+    return fibCurr;
+}
+
+const n = num.length - 1; 
+console.log(`The ${n}th Fibonacci number is: ${findNthFibonacci(n)}`);
+
+5) Write a function to calculate the factorial of a number using iteration.
+
+let num = userInput[0]; 
+console.log(num);
+
+function factorial(n) {
+    if (n < 0) {
+        return "Factorial is not defined for negative numbers.";
+    } else {
+        let result = 1;
+        for (let i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+}
+
+console.log(`Factorial of ${num} is: ${factorial(num)}`);
